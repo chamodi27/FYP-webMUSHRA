@@ -1,0 +1,300 @@
+testname: "Music Generation — Pairwise A/B Comparison"
+testId: ab_music_eval
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: false
+remoteService: service/write.php
+
+pages:
+  - type: generic
+    id: welcome
+    name: "Welcome"
+    content: >
+      <h2>Pairwise Comparison Test</h2>
+      <p>You will hear <strong>9 pairs of music clips</strong> (18 pages total — 2 questions per pair).
+      For each page, listen to both Clip A and Clip B freely, then choose your preference.</p>
+      <ul>
+        <li><strong>Odd pages:</strong> Which has better long-term structural coherence?</li>
+        <li><strong>Even pages:</strong> Which has better overall musical quality?</li>
+      </ul>
+      <p>Use headphones. You may switch between A and B as many times as you like before deciding.</p>
+
+  - type: consent
+    id: consent
+    name: Consent
+    mustConsent: true
+    content: "<p>Do you consent to participate in this anonymous listening test?</p>"
+
+  # --- A/B Pages: 18 pages total (2 per pair × 9 pairs) ---
+  - - random
+
+    # === xLSTM vs Museformer — Pair 1 ===
+    - type: paired_comparison
+      id: ab_xm_1_coherence
+      name: "xLSTM vs Museformer — Pair 1, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_museformer/pair1_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_museformer/pair1_a.wav
+        B: configs/audio/ab/xlstm_vs_museformer/pair1_b.wav
+
+    - type: paired_comparison
+      id: ab_xm_1_quality
+      name: "xLSTM vs Museformer — Pair 1, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_museformer/pair1_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_museformer/pair1_a.wav
+        B: configs/audio/ab/xlstm_vs_museformer/pair1_b.wav
+
+    # === xLSTM vs Museformer — Pair 2 ===
+    - type: paired_comparison
+      id: ab_xm_2_coherence
+      name: "xLSTM vs Museformer — Pair 2, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_museformer/pair2_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_museformer/pair2_a.wav
+        B: configs/audio/ab/xlstm_vs_museformer/pair2_b.wav
+
+    - type: paired_comparison
+      id: ab_xm_2_quality
+      name: "xLSTM vs Museformer — Pair 2, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_museformer/pair2_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_museformer/pair2_a.wav
+        B: configs/audio/ab/xlstm_vs_museformer/pair2_b.wav
+
+    # === xLSTM vs Museformer — Pair 3 ===
+    - type: paired_comparison
+      id: ab_xm_3_coherence
+      name: "xLSTM vs Museformer — Pair 3, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_museformer/pair3_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_museformer/pair3_a.wav
+        B: configs/audio/ab/xlstm_vs_museformer/pair3_b.wav
+
+    - type: paired_comparison
+      id: ab_xm_3_quality
+      name: "xLSTM vs Museformer — Pair 3, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_museformer/pair3_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_museformer/pair3_a.wav
+        B: configs/audio/ab/xlstm_vs_museformer/pair3_b.wav
+
+
+    # === xLSTM vs Lookback RNN — Pair 1 ===
+    - type: paired_comparison
+      id: ab_xl_1_coherence
+      name: "xLSTM vs Lookback — Pair 1, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_lookback/pair1_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_lookback/pair1_a.wav
+        B: configs/audio/ab/xlstm_vs_lookback/pair1_b.wav
+
+    - type: paired_comparison
+      id: ab_xl_1_quality
+      name: "xLSTM vs Lookback — Pair 1, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_lookback/pair1_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_lookback/pair1_a.wav
+        B: configs/audio/ab/xlstm_vs_lookback/pair1_b.wav
+
+    # === xLSTM vs Lookback RNN — Pair 2 ===
+    - type: paired_comparison
+      id: ab_xl_2_coherence
+      name: "xLSTM vs Lookback — Pair 2, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_lookback/pair2_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_lookback/pair2_a.wav
+        B: configs/audio/ab/xlstm_vs_lookback/pair2_b.wav
+
+    - type: paired_comparison
+      id: ab_xl_2_quality
+      name: "xLSTM vs Lookback — Pair 2, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_lookback/pair2_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_lookback/pair2_a.wav
+        B: configs/audio/ab/xlstm_vs_lookback/pair2_b.wav
+
+    # === xLSTM vs Lookback RNN — Pair 3 ===
+    - type: paired_comparison
+      id: ab_xl_3_coherence
+      name: "xLSTM vs Lookback — Pair 3, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_lookback/pair3_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_lookback/pair3_a.wav
+        B: configs/audio/ab/xlstm_vs_lookback/pair3_b.wav
+
+    - type: paired_comparison
+      id: ab_xl_3_quality
+      name: "xLSTM vs Lookback — Pair 3, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/xlstm_vs_lookback/pair3_a.wav
+      stimuli:
+        A: configs/audio/ab/xlstm_vs_lookback/pair3_a.wav
+        B: configs/audio/ab/xlstm_vs_lookback/pair3_b.wav
+
+
+    # === Museformer vs Lookback RNN — Pair 1 ===
+    - type: paired_comparison
+      id: ab_ml_1_coherence
+      name: "Museformer vs Lookback — Pair 1, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/museformer_vs_lookback/pair1_a.wav
+      stimuli:
+        A: configs/audio/ab/museformer_vs_lookback/pair1_a.wav
+        B: configs/audio/ab/museformer_vs_lookback/pair1_b.wav
+
+    - type: paired_comparison
+      id: ab_ml_1_quality
+      name: "Museformer vs Lookback — Pair 1, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/museformer_vs_lookback/pair1_a.wav
+      stimuli:
+        A: configs/audio/ab/museformer_vs_lookback/pair1_a.wav
+        B: configs/audio/ab/museformer_vs_lookback/pair1_b.wav
+
+    # === Museformer vs Lookback RNN — Pair 2 ===
+    - type: paired_comparison
+      id: ab_ml_2_coherence
+      name: "Museformer vs Lookback — Pair 2, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/museformer_vs_lookback/pair2_a.wav
+      stimuli:
+        A: configs/audio/ab/museformer_vs_lookback/pair2_a.wav
+        B: configs/audio/ab/museformer_vs_lookback/pair2_b.wav
+
+    - type: paired_comparison
+      id: ab_ml_2_quality
+      name: "Museformer vs Lookback — Pair 2, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/museformer_vs_lookback/pair2_a.wav
+      stimuli:
+        A: configs/audio/ab/museformer_vs_lookback/pair2_a.wav
+        B: configs/audio/ab/museformer_vs_lookback/pair2_b.wav
+
+    # === Museformer vs Lookback RNN — Pair 3 ===
+    - type: paired_comparison
+      id: ab_ml_3_coherence
+      name: "Museformer vs Lookback — Pair 3, Q1"
+      content: >
+        <strong>Question 1 of 2:</strong><br>
+        Which piece has better <strong>long-term structural coherence</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/museformer_vs_lookback/pair3_a.wav
+      stimuli:
+        A: configs/audio/ab/museformer_vs_lookback/pair3_a.wav
+        B: configs/audio/ab/museformer_vs_lookback/pair3_b.wav
+
+    - type: paired_comparison
+      id: ab_ml_3_quality
+      name: "Museformer vs Lookback — Pair 3, Q2"
+      content: >
+        <strong>Question 2 of 2 (same clips):</strong><br>
+        Which piece has better <strong>overall musical quality</strong>?
+      showWaveform: false
+      enableLooping: false
+      reference: configs/audio/ab/museformer_vs_lookback/pair3_a.wav
+      stimuli:
+        A: configs/audio/ab/museformer_vs_lookback/pair3_a.wav
+        B: configs/audio/ab/museformer_vs_lookback/pair3_b.wav
+
+  - type: finish
+    name: "Thank You"
+    content: "Thank you! Your pairwise comparison results have been recorded."
+    showResults: false
+    writeResults: true
+    questionnaire:
+      - type: text
+        label: Participant ID (if provided)
+        name: participant_id
+      - type: number
+        label: Age
+        name: age
+        min: 16
+        max: 80
+        default: 25
+      - type: likert
+        name: music_background
+        label: "Musical background"
+        response:
+          - value: novice
+            label: "Novice"
+          - value: intermediate
+            label: "Intermediate"
+          - value: expert
+            label: "Expert"

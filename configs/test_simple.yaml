@@ -1,0 +1,57 @@
+testname: Simple MOS Test
+testId: simple_mos
+bufferSize: 4096
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+pages:
+- type: generic
+  id: welcome
+  name: Welcome
+  content: "<p>Welcome to the test.</p>"
+- - random
+  - type: likert_single_stimulus
+    id: mos_clip1
+    name: Rate This Clip
+    content: "<p>Rate this clip.</p>"
+    showWaveform: false
+    mustRate: true
+    mustPlayback: ended
+    stimuli:
+      Clip: configs/audio/xlstm/clip1.wav
+    response:
+    - value: 1
+      label: Bad
+    - value: 2
+      label: Poor
+    - value: 3
+      label: Fair
+    - value: 4
+      label: Good
+    - value: 5
+      label: Excellent
+  - type: likert_single_stimulus
+    id: mos_clip2
+    name: Rate This Clip
+    content: "<p>Rate this clip.</p>"
+    showWaveform: false
+    mustRate: true
+    mustPlayback: ended
+    stimuli:
+      Clip: configs/audio/museformer/clip1.wav
+    response:
+    - value: 1
+      label: Bad
+    - value: 2
+      label: Poor
+    - value: 3
+      label: Fair
+    - value: 4
+      label: Good
+    - value: 5
+      label: Excellent
+- type: finish
+  name: Finish
+  showResults: false
+  writeResults: true
+  content: "Thank you!"

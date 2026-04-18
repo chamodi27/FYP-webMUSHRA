@@ -1,0 +1,173 @@
+testname: Turing Test — Listener 11
+testId: turing_l11
+bufferSize: 4096
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+pages:
+- type: generic
+  id: welcome
+  name: Welcome
+  content: "<p>This test has <strong>10 clips</strong>. Some are composed by humans, others are AI-generated.</p><p>Listen to each clip fully, then choose: <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p><p><strong>Wear headphones.</strong></p>"
+- type: consent
+  id: consent
+  name: Consent
+  mustConsent: true
+  content: >
+    <ol>
+      <li>I have understood the information about the project, and the researchers have explained it to me.</li>
+      <li>I understand that my responses will be recorded anonymously.</li>
+      <li>I understand that my participation is voluntary.</li>
+      <li>I understand that I will not have any personal benefit from the research, but it would benefit the research community.</li>
+      <li>I understand that I am free to contact any of the people involved in the research to seek further clarification and information.</li>
+      <li>I have the right to withdraw the data I have provided at any time, to the extent that they have not been used in any publication at the time of withdrawal.</li>
+    </ol>
+- type: likert_single_stimulus
+  id: turing_ai_xlstm_clip1
+  name: "Clip 1 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/xlstm/clip1.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip3
+  name: "Clip 2 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/human/human_clip3.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip10
+  name: "Clip 3 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/human/human_clip10.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_ai_xlstm_clip4
+  name: "Clip 4 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/xlstm/clip4.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip18
+  name: "Clip 5 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/human/human_clip18.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_ai_lookback_clip17
+  name: "Clip 6 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/lookback/clip17.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip9
+  name: "Clip 7 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/human/human_clip9.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_ai_lookback_clip6
+  name: "Clip 8 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/lookback/clip6.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip1
+  name: "Clip 9 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/human/human_clip1.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip17
+  name: "Clip 10 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/human/human_clip17.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: finish
+  name: Finish
+  showResults: false
+  writeResults: true
+  content: "<p>Thank you for completing the Turing test!</p>"
+  questionnaire:
+    - type: text
+      label: Participant ID
+      name: participant_id
