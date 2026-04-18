@@ -99,9 +99,48 @@ Replace `{N}` with the listener number (e.g. `l3_mos.yaml` for listener 3).
 
 ## Collecting Results
 
-Results are saved automatically to `results/` as CSV files when a participant submits their test.
+Results are saved automatically when a participant clicks **Submit** at the end of each test. No manual steps needed — the folder and CSV file are created on the fly by `service/write.php`.
 
-These files persist on the host machine because `docker-compose.yml` mounts `./results` as a volume.
+### Folder structure
+
+One folder is created per test session, named after the test ID:
+
+```
+results/
+├── mos_l1/
+│   └── lss.csv        ← MOS results for listener 1
+├── ab_l1/
+│   └── lms.csv        ← A/B results for listener 1
+├── turing_l1/
+│   └── lss.csv        ← Turing results for listener 1
+├── mos_l2/
+│   └── lss.csv
+...                    ← 90 folders total for 30 listeners × 3 tests
+```
+
+### CSV file naming
+
+The CSV filename is determined by the **page type** used in the YAML config, not anything you set manually:
+
+| CSV name | Page type | Used by |
+|----------|-----------|---------|
+| `lss.csv` | `likert_single_stimulus` | MOS test, Turing test |
+| `lms.csv` | `likert_multi_stimulus` | A/B test |
+
+### What's in each CSV
+
+Each row represents one stimulus rating from one participant. Columns include:
+- `session_test_id` — e.g. `mos_l1`
+- `participant_id` — entered by the listener at the end of the test
+- `trial_id` — identifies which clip/pair was rated
+- `stimuli_rating` — the score(s) given
+- `stimuli` — the audio file path that was played
+- `rating_time` — time taken to rate (in ms)
+
+### Persistence & git
+
+- The `results/` folder is **gitignored** — participant data is never committed to the repo.
+- Results persist on the host machine because `docker-compose.yml` mounts `./results` as a Docker volume. Even if the container is stopped or rebuilt, the CSV files remain.
 
 ---
 
