@@ -193,9 +193,20 @@ pages:
 
   - type: finish
     name: "Thank You"
-    content: "Thank you for completing the MOS test! Your results have been saved."
+    content: "Thank you for completing the MOS test! Please fill in the details below and click <strong>Send</strong>."
     showResults: false
     writeResults: true
+    popupContent: >
+      <p style="font-size:1.1em;">✅ Your MOS results have been saved!</p>
+      <p>Please continue to the <strong>A/B Comparison Test</strong> (Part 2 of 3).</p>
+      <p><em>Use the same Participant ID for all tests.</em></p>
+      <p style="margin-top:1em;">
+        <a href="?config=ab_test.yaml"
+           data-role="button" data-inline="true" data-theme="b"
+           style="font-size:1.1em;">
+          Continue to A/B Test →
+        </a>
+      </p>
     questionnaire:
       - type: text
         label: Participant ID (if provided)

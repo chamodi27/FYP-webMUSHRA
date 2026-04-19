@@ -275,9 +275,20 @@ pages:
 
   - type: finish
     name: "Thank You"
-    content: "Thank you! Your pairwise comparison results have been recorded."
+    content: "Thank you for completing the A/B test! Please fill in the details below and click <strong>Send</strong>."
     showResults: false
     writeResults: true
+    popupContent: >
+      <p style="font-size:1.1em;">✅ Your A/B comparison results have been saved!</p>
+      <p>Please continue to the <strong>Turing Test</strong> (Part 3 of 3 — final!).</p>
+      <p><em>Use the same Participant ID for all tests.</em></p>
+      <p style="margin-top:1em;">
+        <a href="?config=turing_test.yaml"
+           data-role="button" data-inline="true" data-theme="b"
+           style="font-size:1.1em;">
+          Continue to Turing Test →
+        </a>
+      </p>
     questionnaire:
       - type: text
         label: Participant ID (if provided)

@@ -109,14 +109,17 @@ def volume_page(path):
   stimulus: {path}
 """
 
-def finish_page(content):
+def finish_page(content, popup_content=None):
+    popup_block = ""
+    if popup_content:
+        popup_block = f"""  popupContent: >\n    {popup_content}\n"""
     return f"""\
 - type: finish
   name: Finish
   showResults: false
   writeResults: true
   content: "{content}"
-  questionnaire:
+{popup_block}  questionnaire:
     - type: text
       label: Participant ID
       name: participant_id
@@ -255,7 +258,7 @@ def generate_configs(num_listeners):
 
         # ── Select random subsets ─────────────────────────────────────────────
         # MOS: 3 clips per model + 1 volume clip (from xlstm)
-        mos = {m: random.sample(all_clips[m], 4) for m in MODELS}
+        mos = {m: random.sample(all_clips[m], 4 if m == "xlstm" else 3) for m in MODELS}
         volume_clip = mos["xlstm"].pop()   # 4th xlstm clip used for volume only
 
         # A/B: 6 clips per model (not overlapping with MOS)
@@ -289,7 +292,18 @@ def generate_configs(num_listeners):
             page_id = f"mos_{m}_{clip.split('.')[0]}"
             out += mos_clip_page(page_id, path, active_crit, page_num)
 
-        out += finish_page("<p>Thank you for completing the MOS test! Your results have been saved.</p>")
+        mos_popup = (
+            '<p style="font-size:1.1em;">\u2705 Your MOS results have been saved!</p>'
+            f'<p>Please continue to the <strong>A/B Preference Test</strong> (Part 2 of 3).</p>'
+            '<p><em>Use the same Participant ID for all tests.</em></p>'
+            f'<p style="margin-top:1em;"><a href="?config=randomized/l{lid}_ab.yaml" '
+            'data-role="button" data-inline="true" data-theme="b" '
+            'style="font-size:1.1em;">Continue to A/B Test \u2192</a></p>'
+        )
+        out += finish_page(
+            "<p>Thank you for completing the MOS test! Please fill in the details below and click <strong>Send</strong>.</p>",
+            popup_content=mos_popup
+        )
         (OUTPUT_DIR / f"l{lid}_mos.yaml").write_text(out, encoding="utf-8")
 
         # ════════════════════════════════════════════════════════════════════
@@ -331,7 +345,18 @@ def generate_configs(num_listeners):
         for page_num, block_fn in enumerate(pair_blocks, start=1):
             out += block_fn(page_num)
 
-        out += finish_page("<p>Thank you for completing the A/B preference test!</p>")
+        ab_popup = (
+            '<p style="font-size:1.1em;">\u2705 Your A/B comparison results have been saved!</p>'
+            f'<p>Please continue to the <strong>Turing Test</strong> (Part 3 of 3 \u2014 final!).</p>'
+            '<p><em>Use the same Participant ID for all tests.</em></p>'
+            f'<p style="margin-top:1em;"><a href="?config=randomized/l{lid}_turing.yaml" '
+            'data-role="button" data-inline="true" data-theme="b" '
+            'style="font-size:1.1em;">Continue to Turing Test \u2192</a></p>'
+        )
+        out += finish_page(
+            "<p>Thank you for completing the A/B test! Please fill in the details below and click <strong>Send</strong>.</p>",
+            popup_content=ab_popup
+        )
         (OUTPUT_DIR / f"l{lid}_ab.yaml").write_text(out, encoding="utf-8")
 
         # ════════════════════════════════════════════════════════════════════
@@ -362,7 +387,15 @@ def generate_configs(num_listeners):
                 page_id = f"turing_human_{clip.split('.')[0]}"
             out += turing_likert_page(page_id, path, page_num)
 
-        out += finish_page("<p>Thank you for completing the Turing test!</p>")
+        turing_popup = (
+            '<p style="font-size:1.3em;">\U0001f389 All done!</p>'
+            '<p style="font-size:1.1em;">You have completed all 3 listening tests.<br>'
+            'Thank you for your participation!</p>'
+        )
+        out += finish_page(
+            "<p>Thank you for completing the Turing test! Please fill in the details below and click <strong>Send</strong>.</p>",
+            popup_content=turing_popup
+        )
         (OUTPUT_DIR / f"l{lid}_turing.yaml").write_text(out, encoding="utf-8")
 
     print(f"Done. {num_listeners} sets of configs written to ./{OUTPUT_DIR}/")
