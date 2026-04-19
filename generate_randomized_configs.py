@@ -215,6 +215,7 @@ def ab_pair_page(page_id, path_a, path_b, page_num, total=9):
   name: "Pair {page_num} of {total}"
   content: "{content}"
   mustRate: true
+  mustPlayback: ended
   stimuli:
     "Q1 \u2014 Structural Coherence (Clip A)": {path_a}
     "Q2 \u2014 Overall Quality (Clip B)": {path_b}

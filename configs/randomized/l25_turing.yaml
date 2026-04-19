@@ -23,8 +23,22 @@ pages:
       <li>I have the right to withdraw the data I have provided at any time, to the extent that they have not been used in any publication at the time of withdrawal.</li>
     </ol>
 - type: likert_single_stimulus
-  id: turing_human_human_clip18
+  id: turing_human_human_clip5
   name: "Clip 1 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/human/human_clip5.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip18
+  name: "Clip 2 of 10"
   content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
   showWaveform: false
   mustRate: true
@@ -37,70 +51,14 @@ pages:
   - value: 1
     label: Human-composed
 - type: likert_single_stimulus
-  id: turing_ai_lookback_clip3
-  name: "Clip 2 of 10"
-  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
-  showWaveform: false
-  mustRate: true
-  mustPlayback: ended
-  stimuli:
-    Clip: configs/audio/lookback/clip3.wav
-  response:
-  - value: 0
-    label: AI-generated
-  - value: 1
-    label: Human-composed
-- type: likert_single_stimulus
-  id: turing_ai_xlstm_clip7
+  id: turing_human_human_clip3
   name: "Clip 3 of 10"
   content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/xlstm/clip7.wav
-  response:
-  - value: 0
-    label: AI-generated
-  - value: 1
-    label: Human-composed
-- type: likert_single_stimulus
-  id: turing_human_human_clip9
-  name: "Clip 4 of 10"
-  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
-  showWaveform: false
-  mustRate: true
-  mustPlayback: ended
-  stimuli:
-    Clip: configs/audio/human/human_clip9.wav
-  response:
-  - value: 0
-    label: AI-generated
-  - value: 1
-    label: Human-composed
-- type: likert_single_stimulus
-  id: turing_ai_museformer_clip9
-  name: "Clip 5 of 10"
-  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
-  showWaveform: false
-  mustRate: true
-  mustPlayback: ended
-  stimuli:
-    Clip: configs/audio/museformer/clip9.wav
-  response:
-  - value: 0
-    label: AI-generated
-  - value: 1
-    label: Human-composed
-- type: likert_single_stimulus
-  id: turing_human_human_clip11
-  name: "Clip 6 of 10"
-  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
-  showWaveform: false
-  mustRate: true
-  mustPlayback: ended
-  stimuli:
-    Clip: configs/audio/human/human_clip11.wav
+    Clip: configs/audio/human/human_clip3.wav
   response:
   - value: 0
     label: AI-generated
@@ -108,7 +66,7 @@ pages:
     label: Human-composed
 - type: likert_single_stimulus
   id: turing_human_human_clip15
-  name: "Clip 7 of 10"
+  name: "Clip 4 of 10"
   content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
   showWaveform: false
   mustRate: true
@@ -121,42 +79,84 @@ pages:
   - value: 1
     label: Human-composed
 - type: likert_single_stimulus
-  id: turing_ai_xlstm_clip9
+  id: turing_ai_museformer_clip1
+  name: "Clip 5 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/museformer/clip1.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_ai_xlstm_clip2
+  name: "Clip 6 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/xlstm/clip2.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_ai_xlstm_clip17
+  name: "Clip 7 of 10"
+  content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/xlstm/clip17.wav
+  response:
+  - value: 0
+    label: AI-generated
+  - value: 1
+    label: Human-composed
+- type: likert_single_stimulus
+  id: turing_human_human_clip14
   name: "Clip 8 of 10"
   content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/xlstm/clip9.wav
+    Clip: configs/audio/human/human_clip14.wav
   response:
   - value: 0
     label: AI-generated
   - value: 1
     label: Human-composed
 - type: likert_single_stimulus
-  id: turing_human_human_clip13
+  id: turing_human_human_clip12
   name: "Clip 9 of 10"
   content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/human/human_clip13.wav
+    Clip: configs/audio/human/human_clip12.wav
   response:
   - value: 0
     label: AI-generated
   - value: 1
     label: Human-composed
 - type: likert_single_stimulus
-  id: turing_human_human_clip8
+  id: turing_ai_xlstm_clip4
   name: "Clip 10 of 10"
   content: "<p>Is this clip <strong>AI-generated</strong> or <strong>Human-composed</strong>?</p>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/human/human_clip8.wav
+    Clip: configs/audio/xlstm/clip4.wav
   response:
   - value: 0
     label: AI-generated
