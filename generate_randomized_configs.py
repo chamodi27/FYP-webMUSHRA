@@ -278,8 +278,7 @@ def generate_configs(num_listeners):
         # MOS CONFIG
         # ════════════════════════════════════════════════════════════════════
         vol_path = f"configs/audio/xlstm/{volume_clip}"
-        listener_type = "Expert" if is_expert else "Non-Expert"
-        out  = header(f"MOS Test — Listener {lid} ({listener_type})", f"mos_l{lid}")
+        out  = header(f"MOS Test — Listener {lid}", f"mos_l{lid}")
         out += generic_page("welcome", "Welcome", mos_welcome_content(is_expert))
         out += consent_page()
         out += volume_page(vol_path)
