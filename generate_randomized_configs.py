@@ -197,7 +197,7 @@ def ab_pair_page(page_id, path_a, path_b, page_num, total=9):
     Q2 stimulus slot (path_b) answers overall musical quality.
     """
     content = (
-        "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p>"
+        "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p>"
         "<ul>"
         "<li><strong>Q1 &mdash; Structural Coherence:</strong> "
         "<em>Which clip feels more organized and coherent over time?</em></li>"
@@ -262,13 +262,14 @@ def generate_configs(num_listeners):
         rem  = {m: list(set(all_clips[m]) - set(mos[m]) - ({volume_clip} if m == "xlstm" else set())) for m in MODELS}
         ab   = {m: random.sample(rem[m], 6) for m in MODELS}
 
-        # Turing: 4 AI clips + 6 human clips
-        rem2_pool = []
+        # Turing: 2 clips per model (6 AI total) + 4 human clips
+        turing_ai = []
         for m in MODELS:
             used = set(mos[m]) | set(ab[m]) | ({volume_clip} if m == "xlstm" else set())
-            rem2_pool += [(m, c) for c in all_clips[m] if c not in used]
-        turing_ai    = random.sample(rem2_pool, min(4, len(rem2_pool)))
-        turing_human = random.sample(all_human, min(6, len(all_human)))
+            rem2_pool = [(m, c) for c in all_clips[m] if c not in used]
+            turing_ai += random.sample(rem2_pool, 2)
+            
+        turing_human = random.sample(all_human, 4)
 
         # ════════════════════════════════════════════════════════════════════
         # MOS CONFIG
@@ -291,13 +292,12 @@ def generate_configs(num_listeners):
         mos_popup = (
             '<p style="font-size:1.1em;">\u2705 Your MOS results have been saved!</p>'
             f'<p>Please continue to the <strong>A/B Preference Test</strong> (Part 2 of 3).</p>'
-            '<p><em>Use the same Participant ID for all tests.</em></p>'
             f'<p style="margin-top:1em;"><a href="?config=randomized/l{lid}_ab.yaml" '
-            'data-role="button" data-inline="true" data-theme="b" '
+            'data-role="button" data-inline="true" data-theme="b" data-ajax="false" '
             'style="font-size:1.1em;">Continue to A/B Test \u2192</a></p>'
         )
         out += finish_page(
-            "<p>Thank you for completing the MOS test! Please fill in the details below and click <strong>Send</strong>.</p>",
+            "<p>Thank you for completing the MOS test! Click <strong>Send</strong> to save your results.</p>",
             popup_content=mos_popup
         )
         (OUTPUT_DIR / f"l{lid}_mos.yaml").write_text(out, encoding="utf-8")
@@ -319,11 +319,18 @@ def generate_configs(num_listeners):
             ("xlstm",      "lookback"),
             ("museformer", "lookback"),
         ]
-        pair_idx = 0
+        
+        # Track which clip index to use next for each model (0 to 5)
+        model_idx = {"xlstm": 0, "museformer": 0, "lookback": 0}
+
         for (mA, mB) in comparisons:
             for i in range(3):
-                clip_a = ab[mA][pair_idx % 3 if mA == comparisons[0][0] else i]
-                clip_b = ab[mB][i]
+                clip_a = ab[mA][model_idx[mA]]
+                clip_b = ab[mB][model_idx[mB]]
+                
+                model_idx[mA] += 1
+                model_idx[mB] += 1
+                
                 path_a = f"configs/audio/{mA}/{clip_a}"
                 path_b = f"configs/audio/{mB}/{clip_b}"
 
@@ -335,7 +342,6 @@ def generate_configs(num_listeners):
                     lambda pn, _pid=f"ab_{pid}", _pa=path_a, _pb=path_b:
                         ab_pair_page(_pid, _pa, _pb, pn)
                 )
-            pair_idx += 3
 
         random.shuffle(pair_blocks)
         for page_num, block_fn in enumerate(pair_blocks, start=1):
@@ -344,13 +350,12 @@ def generate_configs(num_listeners):
         ab_popup = (
             '<p style="font-size:1.1em;">\u2705 Your A/B comparison results have been saved!</p>'
             f'<p>Please continue to the <strong>Turing Test</strong> (Part 3 of 3 \u2014 final!).</p>'
-            '<p><em>Use the same Participant ID for all tests.</em></p>'
             f'<p style="margin-top:1em;"><a href="?config=randomized/l{lid}_turing.yaml" '
-            'data-role="button" data-inline="true" data-theme="b" '
+            'data-role="button" data-inline="true" data-theme="b" data-ajax="false" '
             'style="font-size:1.1em;">Continue to Turing Test \u2192</a></p>'
         )
         out += finish_page(
-            "<p>Thank you for completing the A/B test! Please fill in the details below and click <strong>Send</strong>.</p>",
+            "<p>Thank you for completing the A/B test! Click <strong>Send</strong> to save your results.</p>",
             popup_content=ab_popup
         )
         (OUTPUT_DIR / f"l{lid}_ab.yaml").write_text(out, encoding="utf-8")
@@ -387,9 +392,10 @@ def generate_configs(num_listeners):
             '<p style="font-size:1.3em;">\U0001f389 All done!</p>'
             '<p style="font-size:1.1em;">You have completed all 3 listening tests.<br>'
             'Thank you for your participation!</p>'
+            '<p style="margin-top:0.5em; font-size:0.95em; color:#555;">You may now close this window.</p>'
         )
         out += finish_page(
-            "<p>Thank you for completing the Turing test! Please fill in the details below and click <strong>Send</strong>.</p>",
+            "<p>Thank you for completing the Turing test! Click <strong>Send</strong> to save your results.</p>",
             popup_content=turing_popup
         )
         (OUTPUT_DIR / f"l{lid}_turing.yaml").write_text(out, encoding="utf-8")

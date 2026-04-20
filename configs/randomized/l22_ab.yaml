@@ -23,28 +23,14 @@ pages:
       <li>I have the right to withdraw the data I have provided at any time, to the extent that they have not been used in any publication at the time of withdrawal.</li>
     </ol>
 - type: likert_multi_stimulus
-  id: ab_xlstm_museformer_0
-  name: "Pair 1 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
-  mustRate: true
-  mustPlayback: ended
-  stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/museformer/clip1.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/xlstm/clip18.wav
-  response:
-    - value: prefer_a
-      label: "Prefer A"
-    - value: prefer_b
-      label: "Prefer B"
-- type: likert_multi_stimulus
   id: ab_museformer_lookback_0
-  name: "Pair 2 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  name: "Pair 1 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
   mustRate: true
   mustPlayback: ended
   stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/museformer/clip1.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/lookback/clip7.wav
+    "Q1 — Structural Coherence (Clip A)": configs/audio/lookback/clip12.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/museformer/clip13.wav
   response:
     - value: prefer_a
       label: "Prefer A"
@@ -52,27 +38,13 @@ pages:
       label: "Prefer B"
 - type: likert_multi_stimulus
   id: ab_xlstm_lookback_1
-  name: "Pair 3 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  name: "Pair 2 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
   mustRate: true
   mustPlayback: ended
   stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/lookback/clip1.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/xlstm/clip18.wav
-  response:
-    - value: prefer_a
-      label: "Prefer A"
-    - value: prefer_b
-      label: "Prefer B"
-- type: likert_multi_stimulus
-  id: ab_xlstm_museformer_1
-  name: "Pair 4 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
-  mustRate: true
-  mustPlayback: ended
-  stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip18.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/museformer/clip3.wav
+    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip15.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/lookback/clip19.wav
   response:
     - value: prefer_a
       label: "Prefer A"
@@ -80,27 +52,27 @@ pages:
       label: "Prefer B"
 - type: likert_multi_stimulus
   id: ab_xlstm_museformer_2
-  name: "Pair 5 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  name: "Pair 3 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
   mustRate: true
   mustPlayback: ended
   stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/museformer/clip18.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/xlstm/clip18.wav
+    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip12.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/museformer/clip11.wav
   response:
     - value: prefer_a
       label: "Prefer A"
     - value: prefer_b
       label: "Prefer B"
 - type: likert_multi_stimulus
-  id: ab_museformer_lookback_2
-  name: "Pair 6 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  id: ab_xlstm_museformer_0
+  name: "Pair 4 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
   mustRate: true
   mustPlayback: ended
   stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/museformer/clip18.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/lookback/clip6.wav
+    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip14.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/museformer/clip14.wav
   response:
     - value: prefer_a
       label: "Prefer A"
@@ -108,13 +80,13 @@ pages:
       label: "Prefer B"
 - type: likert_multi_stimulus
   id: ab_xlstm_lookback_2
-  name: "Pair 7 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  name: "Pair 5 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
   mustRate: true
   mustPlayback: ended
   stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip18.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/lookback/clip6.wav
+    "Q1 — Structural Coherence (Clip A)": configs/audio/lookback/clip16.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/xlstm/clip6.wav
   response:
     - value: prefer_a
       label: "Prefer A"
@@ -122,13 +94,41 @@ pages:
       label: "Prefer B"
 - type: likert_multi_stimulus
   id: ab_museformer_lookback_1
-  name: "Pair 8 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  name: "Pair 6 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
   mustRate: true
   mustPlayback: ended
   stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/lookback/clip1.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/museformer/clip3.wav
+    "Q1 — Structural Coherence (Clip A)": configs/audio/museformer/clip6.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/lookback/clip11.wav
+  response:
+    - value: prefer_a
+      label: "Prefer A"
+    - value: prefer_b
+      label: "Prefer B"
+- type: likert_multi_stimulus
+  id: ab_museformer_lookback_2
+  name: "Pair 7 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    "Q1 — Structural Coherence (Clip A)": configs/audio/lookback/clip17.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/museformer/clip4.wav
+  response:
+    - value: prefer_a
+      label: "Prefer A"
+    - value: prefer_b
+      label: "Prefer B"
+- type: likert_multi_stimulus
+  id: ab_xlstm_museformer_1
+  name: "Pair 8 of 9"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip18.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/museformer/clip8.wav
   response:
     - value: prefer_a
       label: "Prefer A"
@@ -137,12 +137,12 @@ pages:
 - type: likert_multi_stimulus
   id: ab_xlstm_lookback_0
   name: "Pair 9 of 9"
-  content: "<p>Listen to both clips (Clip A and Clip B), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
+  content: "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p><ul><li><strong>Q1 &mdash; Structural Coherence:</strong> <em>Which clip feels more organized and coherent over time?</em></li><li><strong>Q2 &mdash; Overall Musical Quality:</strong> <em>Which clip has better overall musical quality?</em></li></ul>"
   mustRate: true
   mustPlayback: ended
   stimuli:
-    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip18.wav
-    "Q2 — Overall Quality (Clip B)": configs/audio/lookback/clip7.wav
+    "Q1 — Structural Coherence (Clip A)": configs/audio/xlstm/clip8.wav
+    "Q2 — Overall Quality (Clip B)": configs/audio/lookback/clip4.wav
   response:
     - value: prefer_a
       label: "Prefer A"
@@ -152,6 +152,6 @@ pages:
   name: Finish
   showResults: false
   writeResults: true
-  content: "<p>Thank you for completing the A/B test! Please fill in the details below and click <strong>Send</strong>.</p>"
+  content: "<p>Thank you for completing the A/B test! Click <strong>Send</strong> to save your results.</p>"
   popupContent: >
-    <p style="font-size:1.1em;">✅ Your A/B comparison results have been saved!</p><p>Please continue to the <strong>Turing Test</strong> (Part 3 of 3 — final!).</p><p><em>Use the same Participant ID for all tests.</em></p><p style="margin-top:1em;"><a href="?config=randomized/l22_turing.yaml" data-role="button" data-inline="true" data-theme="b" style="font-size:1.1em;">Continue to Turing Test →</a></p>
+    <p style="font-size:1.1em;">✅ Your A/B comparison results have been saved!</p><p>Please continue to the <strong>Turing Test</strong> (Part 3 of 3 — final!).</p><p style="margin-top:1em;"><a href="?config=randomized/l22_turing.yaml" data-role="button" data-inline="true" data-theme="b" data-ajax="false" style="font-size:1.1em;">Continue to Turing Test →</a></p>

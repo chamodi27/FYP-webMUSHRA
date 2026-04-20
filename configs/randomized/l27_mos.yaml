@@ -27,16 +27,16 @@ pages:
   name: Volume Calibration
   content: "Please set your volume to a comfortable level using the clip below."
   defaultVolume: 0.5
-  stimulus: configs/audio/xlstm/clip1.wav
+  stimulus: configs/audio/xlstm/clip5.wav
 - type: likert_single_stimulus
-  id: mos_museformer_clip1
+  id: mos_xlstm_clip20
   name: "Clip 1 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/museformer/clip1.wav
+    Clip: configs/audio/xlstm/clip20.wav
   response:
   -
     - value: 1
@@ -72,14 +72,14 @@ pages:
     - value: 5
       label: Excellent
 - type: likert_single_stimulus
-  id: mos_xlstm_clip5
+  id: mos_xlstm_clip9
   name: "Clip 2 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/xlstm/clip5.wav
+    Clip: configs/audio/xlstm/clip9.wav
   response:
   -
     - value: 1
@@ -115,14 +115,14 @@ pages:
     - value: 5
       label: Excellent
 - type: likert_single_stimulus
-  id: mos_museformer_clip20
+  id: mos_museformer_clip6
   name: "Clip 3 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/museformer/clip20.wav
+    Clip: configs/audio/museformer/clip6.wav
   response:
   -
     - value: 1
@@ -158,57 +158,14 @@ pages:
     - value: 5
       label: Excellent
 - type: likert_single_stimulus
-  id: mos_lookback_clip16
+  id: mos_lookback_clip18
   name: "Clip 4 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/lookback/clip16.wav
-  response:
-  -
-    - value: 1
-      label: Bad
-    - value: 2
-      label: Poor
-    - value: 3
-      label: Fair
-    - value: 4
-      label: Good
-    - value: 5
-      label: Excellent
-  -
-    - value: 1
-      label: Bad
-    - value: 2
-      label: Poor
-    - value: 3
-      label: Fair
-    - value: 4
-      label: Good
-    - value: 5
-      label: Excellent
-  -
-    - value: 1
-      label: Bad
-    - value: 2
-      label: Poor
-    - value: 3
-      label: Fair
-    - value: 4
-      label: Good
-    - value: 5
-      label: Excellent
-- type: likert_single_stimulus
-  id: mos_lookback_clip2
-  name: "Clip 5 of 9"
-  content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
-  showWaveform: false
-  mustRate: true
-  mustPlayback: ended
-  stimuli:
-    Clip: configs/audio/lookback/clip2.wav
+    Clip: configs/audio/lookback/clip18.wav
   response:
   -
     - value: 1
@@ -245,7 +202,7 @@ pages:
       label: Excellent
 - type: likert_single_stimulus
   id: mos_museformer_clip9
-  name: "Clip 6 of 9"
+  name: "Clip 5 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
@@ -287,14 +244,57 @@ pages:
     - value: 5
       label: Excellent
 - type: likert_single_stimulus
-  id: mos_xlstm_clip10
+  id: mos_lookback_clip3
+  name: "Clip 6 of 9"
+  content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
+  showWaveform: false
+  mustRate: true
+  mustPlayback: ended
+  stimuli:
+    Clip: configs/audio/lookback/clip3.wav
+  response:
+  -
+    - value: 1
+      label: Bad
+    - value: 2
+      label: Poor
+    - value: 3
+      label: Fair
+    - value: 4
+      label: Good
+    - value: 5
+      label: Excellent
+  -
+    - value: 1
+      label: Bad
+    - value: 2
+      label: Poor
+    - value: 3
+      label: Fair
+    - value: 4
+      label: Good
+    - value: 5
+      label: Excellent
+  -
+    - value: 1
+      label: Bad
+    - value: 2
+      label: Poor
+    - value: 3
+      label: Fair
+    - value: 4
+      label: Good
+    - value: 5
+      label: Excellent
+- type: likert_single_stimulus
+  id: mos_lookback_clip19
   name: "Clip 7 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/xlstm/clip10.wav
+    Clip: configs/audio/lookback/clip19.wav
   response:
   -
     - value: 1
@@ -330,14 +330,14 @@ pages:
     - value: 5
       label: Excellent
 - type: likert_single_stimulus
-  id: mos_lookback_clip17
+  id: mos_xlstm_clip12
   name: "Clip 8 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/lookback/clip17.wav
+    Clip: configs/audio/xlstm/clip12.wav
   response:
   -
     - value: 1
@@ -373,14 +373,14 @@ pages:
     - value: 5
       label: Excellent
 - type: likert_single_stimulus
-  id: mos_xlstm_clip18
+  id: mos_museformer_clip16
   name: "Clip 9 of 9"
   content: "<p>Listen to the clip fully, then rate it on each criterion below (one row per criterion):</p><ol><li><strong>Structural Coherence</strong> &mdash; <em>The piece feels organized and coherent over time.</em></li><li><strong>Musical Flow</strong> &mdash; <em>The music progresses naturally.</em></li><li><strong>Overall Musical Quality</strong> &mdash; <em>Overall, this is a good musical composition.</em></li></ol>"
   showWaveform: false
   mustRate: true
   mustPlayback: ended
   stimuli:
-    Clip: configs/audio/xlstm/clip18.wav
+    Clip: configs/audio/museformer/clip16.wav
   response:
   -
     - value: 1
@@ -419,6 +419,6 @@ pages:
   name: Finish
   showResults: false
   writeResults: true
-  content: "<p>Thank you for completing the MOS test! Please fill in the details below and click <strong>Send</strong>.</p>"
+  content: "<p>Thank you for completing the MOS test! Click <strong>Send</strong> to save your results.</p>"
   popupContent: >
-    <p style="font-size:1.1em;">✅ Your MOS results have been saved!</p><p>Please continue to the <strong>A/B Preference Test</strong> (Part 2 of 3).</p><p><em>Use the same Participant ID for all tests.</em></p><p style="margin-top:1em;"><a href="?config=randomized/l27_ab.yaml" data-role="button" data-inline="true" data-theme="b" style="font-size:1.1em;">Continue to A/B Test →</a></p>
+    <p style="font-size:1.1em;">✅ Your MOS results have been saved!</p><p>Please continue to the <strong>A/B Preference Test</strong> (Part 2 of 3).</p><p style="margin-top:1em;"><a href="?config=randomized/l27_ab.yaml" data-role="button" data-inline="true" data-theme="b" data-ajax="false" style="font-size:1.1em;">Continue to A/B Test →</a></p>
