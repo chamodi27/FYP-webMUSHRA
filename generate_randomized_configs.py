@@ -178,48 +178,29 @@ def turing_likert_page(page_id, path, page_num, total=10):
 {TURING_RESPONSE_BLOCK}
 """
 
-AB_PREFERENCE_SCALE = (
-    "  -\n"
-    "    - value: prefer_a\n"
-    "      label: \"Prefer A\"\n"
-    "    - value: no_preference\n"
-    "      label: \"No Preference\"\n"
-    "    - value: prefer_b\n"
-    "      label: \"Prefer B\""
-)
-
-
 def ab_pair_page(page_id, path_a, path_b, page_num, total=9):
     """
-    One page per pair using likert_multi_stimulus.
-    Both clips have their own play button.
-    Q1 stimulus slot (path_a) answers structural coherence.
-    Q2 stimulus slot (path_b) answers overall musical quality.
+    One page per pair using paired_comparison in explicit A/B preference mode.
+    The participant listens to clip A and clip B, then answers one forced-choice question.
     """
     content = (
-        "<p>Listen to Clip A (first clip) and Clip B (second clip), then answer each question below:</p>"
-        "<ul>"
-        "<li><strong>Q1 &mdash; Structural Coherence:</strong> "
-        "<em>Which clip feels more organized and coherent over time?</em></li>"
-        "<li><strong>Q2 &mdash; Overall Musical Quality:</strong> "
-        "<em>Which clip has better overall musical quality?</em></li>"
-        "</ul>"
+        "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p>"
+        "<p>Then answer the question below by choosing the clip you prefer.</p>"
     )
     return f"""\
-- type: likert_multi_stimulus
+- type: paired_comparison
   id: {page_id}
   name: "Pair {page_num} of {total}"
   content: "{content}"
-  mustRate: true
-  mustPlayback: ended
+  pairedComparisonMode: preference_ab
+  questionText: "Which clip has better structural coherence and overall musical quality?"
+  optionALabel: "Prefer A"
+  optionBLabel: "Prefer B"
+  showWaveform: false
+  enableLooping: false
+  reference: {path_a}
   stimuli:
-    "Q1 \u2014 Structural Coherence (Clip A)": {path_a}
-    "Q2 \u2014 Overall Quality (Clip B)": {path_b}
-  response:
-    - value: prefer_a
-      label: "Prefer A"
-    - value: prefer_b
-      label: "Prefer B"
+    B: {path_b}
 """
 
 # ── Welcome text helpers ──────────────────────────────────────────────────────
@@ -308,8 +289,8 @@ def generate_configs(num_listeners):
         out  = header(f"A/B Preference Test — Listener {lid}", f"ab_l{lid}")
         out += generic_page("welcome", "Welcome",
             "<p>This test has <strong>9 pairs</strong> of music clips. "
-            "Listen to both clips in each pair, then answer 2 questions "
-            "about which you prefer.</p>"
+            "Listen to both clips in each pair, then choose which clip you "
+            "prefer overall, considering both structural coherence and musical quality.</p>"
             "<p><strong>Wear headphones.</strong></p>")
         out += consent_page()
 
