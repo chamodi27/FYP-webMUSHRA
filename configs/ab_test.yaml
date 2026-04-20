@@ -275,7 +275,7 @@ pages:
 
   - type: finish
     name: "Thank You"
-    content: "Thank you for completing the A/B test! Please fill in the details below and click <strong>Send</strong>."
+    content: "Thank you for completing the A/B test! Click <strong>Send</strong> to save your results."
     showResults: false
     writeResults: true
     popupContent: >
@@ -289,23 +289,3 @@ pages:
           Continue to Turing Test →
         </a>
       </p>
-    questionnaire:
-      - type: text
-        label: Participant ID (if provided)
-        name: participant_id
-      - type: number
-        label: Age
-        name: age
-        min: 16
-        max: 80
-        default: 25
-      - type: likert
-        name: music_background
-        label: "Musical background"
-        response:
-          - value: novice
-            label: "Novice"
-          - value: intermediate
-            label: "Intermediate"
-          - value: expert
-            label: "Expert"

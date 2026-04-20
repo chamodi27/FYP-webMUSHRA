@@ -119,11 +119,7 @@ def finish_page(content, popup_content=None):
   showResults: false
   writeResults: true
   content: "{content}"
-{popup_block}  questionnaire:
-    - type: text
-      label: Participant ID
-      name: participant_id
-"""
+{popup_block}"""
 
 def _scale_block():
     """One YAML list item (one Likert scale row) for the multi-scale response."""

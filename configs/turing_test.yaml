@@ -179,30 +179,10 @@ pages:
 
   - type: finish
     name: "Thank You"
-    content: "Thank you for completing the Turing test! Please fill in the details below and click <strong>Send</strong>."
+    content: "Thank you for completing the Turing test! Click <strong>Send</strong> to save your results."
     showResults: false
     writeResults: true
     popupContent: >
       <p style="font-size:1.3em;">🎉 All done!</p>
       <p style="font-size:1.1em;">You have completed all 3 listening tests.<br>
       Thank you for your participation!</p>
-    questionnaire:
-      - type: text
-        label: Participant ID (if provided)
-        name: participant_id
-      - type: number
-        label: Age
-        name: age
-        min: 16
-        max: 80
-        default: 25
-      - type: likert
-        name: music_background
-        label: "Musical background"
-        response:
-          - value: novice
-            label: "Novice"
-          - value: intermediate
-            label: "Intermediate"
-          - value: expert
-            label: "Expert"
