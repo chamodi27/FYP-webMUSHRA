@@ -1,8 +1,10 @@
+version: '2'
 services:
   webmushra:
-    image: php:7.0-apache
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ./:/var/www/html
       - ./results:/var/www/html/results
       - ./configs:/var/www/html/configs
     ports:
