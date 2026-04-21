@@ -23,7 +23,7 @@ pages:
       <li>I have the right to withdraw the data I have provided at any time, to the extent that they have not been used in any publication at the time of withdrawal.</li>
     </ol>
 - type: paired_comparison
-  id: ab_museformer_lookback_1
+  id: ab_xlstm_museformer_2
   name: "Pair 1 of 9"
   content: "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p><p>Then answer the question below by choosing the clip you prefer.</p>"
   pairedComparisonMode: preference_ab
@@ -32,11 +32,11 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/museformer/clip12.wav
+  reference: configs/audio/xlstm/clip10.wav
   stimuli:
-    B: configs/audio/lookback/clip12.wav
+    B: configs/audio/museformer/clip13.wav
 - type: paired_comparison
-  id: ab_xlstm_lookback_2
+  id: ab_museformer_lookback_0
   name: "Pair 2 of 9"
   content: "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p><p>Then answer the question below by choosing the clip you prefer.</p>"
   pairedComparisonMode: preference_ab
@@ -45,9 +45,9 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/lookback/clip2.wav
+  reference: configs/audio/lookback/clip15.wav
   stimuli:
-    B: configs/audio/xlstm/clip5.wav
+    B: configs/audio/museformer/clip1.wav
 - type: paired_comparison
   id: ab_xlstm_lookback_0
   name: "Pair 3 of 9"
@@ -58,11 +58,11 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/lookback/clip20.wav
+  reference: configs/audio/lookback/clip12.wav
   stimuli:
-    B: configs/audio/xlstm/clip20.wav
+    B: configs/audio/xlstm/clip13.wav
 - type: paired_comparison
-  id: ab_xlstm_museformer_2
+  id: ab_museformer_lookback_2
   name: "Pair 4 of 9"
   content: "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p><p>Then answer the question below by choosing the clip you prefer.</p>"
   pairedComparisonMode: preference_ab
@@ -71,9 +71,9 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/museformer/clip4.wav
+  reference: configs/audio/museformer/clip11.wav
   stimuli:
-    B: configs/audio/xlstm/clip19.wav
+    B: configs/audio/lookback/clip18.wav
 - type: paired_comparison
   id: ab_xlstm_museformer_0
   name: "Pair 5 of 9"
@@ -84,11 +84,11 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/museformer/clip15.wav
+  reference: configs/audio/xlstm/clip18.wav
   stimuli:
-    B: configs/audio/xlstm/clip2.wav
+    B: configs/audio/museformer/clip4.wav
 - type: paired_comparison
-  id: ab_museformer_lookback_2
+  id: ab_xlstm_lookback_1
   name: "Pair 6 of 9"
   content: "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p><p>Then answer the question below by choosing the clip you prefer.</p>"
   pairedComparisonMode: preference_ab
@@ -97,11 +97,11 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/museformer/clip8.wav
+  reference: configs/audio/xlstm/clip8.wav
   stimuli:
-    B: configs/audio/lookback/clip15.wav
+    B: configs/audio/lookback/clip14.wav
 - type: paired_comparison
-  id: ab_xlstm_museformer_1
+  id: ab_xlstm_lookback_2
   name: "Pair 7 of 9"
   content: "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p><p>Then answer the question below by choosing the clip you prefer.</p>"
   pairedComparisonMode: preference_ab
@@ -110,11 +110,11 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/museformer/clip6.wav
+  reference: configs/audio/lookback/clip1.wav
   stimuli:
-    B: configs/audio/xlstm/clip7.wav
+    B: configs/audio/xlstm/clip9.wav
 - type: paired_comparison
-  id: ab_museformer_lookback_0
+  id: ab_museformer_lookback_1
   name: "Pair 8 of 9"
   content: "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p><p>Then answer the question below by choosing the clip you prefer.</p>"
   pairedComparisonMode: preference_ab
@@ -123,11 +123,11 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/museformer/clip13.wav
+  reference: configs/audio/lookback/clip17.wav
   stimuli:
-    B: configs/audio/lookback/clip6.wav
+    B: configs/audio/museformer/clip9.wav
 - type: paired_comparison
-  id: ab_xlstm_lookback_1
+  id: ab_xlstm_museformer_1
   name: "Pair 9 of 9"
   content: "<p>Listen to <strong>Clip A</strong> and <strong>Clip B</strong>.</p><p>Then answer the question below by choosing the clip you prefer.</p>"
   pairedComparisonMode: preference_ab
@@ -136,9 +136,9 @@ pages:
   optionBLabel: "Prefer B"
   showWaveform: false
   enableLooping: false
-  reference: configs/audio/xlstm/clip1.wav
+  reference: configs/audio/xlstm/clip2.wav
   stimuli:
-    B: configs/audio/lookback/clip4.wav
+    B: configs/audio/museformer/clip14.wav
 - type: finish
   name: Finish
   showResults: false
